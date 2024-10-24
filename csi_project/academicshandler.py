@@ -10,7 +10,7 @@ import os
 
 conn = mysql.connect(
     host = os.getenv("HOST"),
-    user = os.getenv("USER"),
+    user = os.getenv("USERNAME"),
     password = os.getenv("PASSWORD"),
     database = os.getenv("DATABASE")
 )
