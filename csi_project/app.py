@@ -6,3 +6,4 @@ from .routes import courses
 app = FastAPI()
 app.include_router(courses.coursesrouter)
 app.include_router(users.userrouter)
+
