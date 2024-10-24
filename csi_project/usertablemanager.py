@@ -5,16 +5,12 @@ load_dotenv()
 
 import os
 
-try:
-    conn = mysql.connect(
-        host = os.getenv("HOST"),
-        user = os.getenv("USER"),
-        password = os.getenv("PASSWORD"),
-        database = os.getenv("DATABASE")
-    )
-except Exception:
-    print("stfu")
-
+conn = mysql.connect(
+    host = os.getenv("HOST"),
+    user = os.getenv("USER"),
+    password = os.getenv("PASSWORD"),
+    database = os.getenv("DATABASE")
+)
 cursor = conn.cursor()
 
 def verifylogininfo(username, hashedsaltedpassword, cursor):
