@@ -5,13 +5,15 @@ load_dotenv()
 
 import os
 
-
-conn = mysql.connect(
-    host = "localhost",
-    user = "root",
-    password = os.getenv("PASSWORD"),
-    database = os.getenv("DATABASE")
-)
+try:
+    conn = mysql.connect(
+        host = "localhost",
+        user = "root",
+        password = os.getenv("PASSWORD"),
+        database = os.getenv("DATABASE")
+    )
+except:
+    print("stfu")
 
 cursor = conn.cursor()
 
