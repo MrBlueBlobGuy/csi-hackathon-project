@@ -15,7 +15,7 @@ conn = mysql.connect(
 )
 
 
-cursor = conn.cursosr()
+cursor = conn.cursor()
 
 def add_course(coursename, teacher, description):
     try:
