@@ -9,7 +9,7 @@ import os
 
 try:
     conn = mysql.connect(
-        host = "os.getenv("HOST")",
+        host = os.getenv("HOST"),
         user = "root",
         password = os.getenv("PASSWORD"),
         database = os.getenv("DATABASE")
