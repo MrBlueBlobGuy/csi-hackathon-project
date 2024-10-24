@@ -25,9 +25,17 @@ def verifylogininfo(username, hashedsaltedpassword, cursor):
         print(f'CRITICAL ERROR OCCURED AT: {err}')
         return False
     
-def getsalt(username, cursor):
+def getsaltfromdb(username, cursor):
     try: 
         cursor.execute("SELECT salt FROM userdata WHERE username='%s", [username, ])
-        return cursor.fetchone()
+        return cursor.fetchone()[0]
     except mysql.Error as err:
+        print(f"CRITICAL ERROR OCCURED AT: {err}")
+
+def add_entry(username, hashedsaltedpassword, id, usertype, salt, cursor):
+    try:
+        cursor.execute("INSERT INTO userdata (username, hashedsaltedpassword, id, usertype, salt) VALUES (%s, %s, %d, %s, %s)", [username, hashedsaltedpassword, id, usertype, salt])
+        cursor._connection.commit()
+
+    except Exception as err:
         print(f"CRITICAL ERROR OCCURED AT: {err}")
