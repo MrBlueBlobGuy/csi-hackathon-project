@@ -12,7 +12,7 @@ try:
         password = os.getenv("PASSWORD"),
         database = os.getenv("DATABASE")
     )
-except:
+except Exception:
     print("stfu")
 
 cursor = conn.cursor()
