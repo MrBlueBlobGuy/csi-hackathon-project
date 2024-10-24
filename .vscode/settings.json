@@ -6,7 +6,7 @@
                 "enableSsl": "Disabled"
             },
             "previewLimit": 50,
-            "server": "localhost",
+            "server": "os.getenv("HOST")",
             "port": 3306,
             "driver": "MySQL",
             "name": "mastermentor",

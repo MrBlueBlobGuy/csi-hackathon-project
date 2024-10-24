@@ -9,12 +9,12 @@ import os
 
 try:
     conn = mysql.connect(
-        host = "localhost",
+        host = "os.getenv("HOST")",
         user = "root",
         password = os.getenv("PASSWORD"),
         database = os.getenv("DATABASE")
     )
-except:
+except Exception:
     print("TODO")
 
 cursor = conn.cursor()
